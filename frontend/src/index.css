@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { font-family: 'Rajdhani', sans-serif; }
+
+/* ── better base text visibility ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* All plain text defaults to high-contrast off-white */
+p, span, div, li, td, th, label { color: inherit; }
+
+/* Inputs & selects – always readable */
+input, select, textarea {
+  color: #e8f4ff !important;
+  background: #0d1f35 !important;
+}
+input::placeholder { color: #3a6080 !important; }
+option, optgroup { background: #0d1f35 !important; color: #e8f4ff !important; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+.fade-up   { animation: fadeUp 0.25s ease; }
+.pulse-dot { animation: pulse-dot 1.2s infinite; }
+
+/* thin scrollbar */
+* { scrollbar-width: thin; scrollbar-color: #1a2d42 transparent; }
+::-webkit-scrollbar       { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1a2d42; border-radius: 2px; }
